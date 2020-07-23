@@ -1,5 +1,11 @@
 steps:
 
+#Obtem a imagem do docker-compose e executa o docker-compose especifico do cloud-build
 - id: "Rodando docker-compose"
-  name: 'gcr.io/$PROJECT_ID/docker-compose'
+  name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
   args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']
+
+#Docker ps para verificar se os containers estão executando
+- id: "Rodando docker ps"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['ps']
