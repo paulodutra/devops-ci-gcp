@@ -24,12 +24,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # cria um link simbolico para a pasta public do laravel para a pasta html 
 RUN ln -s public html
 
+#comentando essa parte para ver se resolve o problema de permissão no GCP
 # Muda o dono do arquivo (A instalação do pacote shadow para habilitar o comando usermod)
-RUN usermod -u 1000 www-data
-USER www-data
-
-RUN chown -Rf www-data:www-data .
-
+#RUN usermod -u 1000 www-data
+#USER www-data
 
 
 # RUN composer install && \
