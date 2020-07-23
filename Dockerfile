@@ -28,6 +28,8 @@ RUN ln -s public html
 RUN usermod -u 1000 www-data
 USER www-data
 
+RUN chown -Rf www-data:www-data .
+
 
 
 # RUN composer install && \

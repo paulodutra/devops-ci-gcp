@@ -14,3 +14,13 @@ steps:
 - id: "Instando dependências com o composer"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'app', 'composer', 'install']
+
+#.env
+- id: "Copiando o .env"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'app', 'cp', '.env.example', '.env']
+
+#Key generate (gerando a chave da app laravel)
+- id: "Gerando a chave da aplicação - key:generate"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'app', 'php', '/var/www/artisan', 'key:generate']
