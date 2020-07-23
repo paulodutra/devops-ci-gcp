@@ -9,3 +9,8 @@ steps:
 - id: "Rodando docker ps"
   name: 'gcr.io/cloud-builders/docker'
   args: ['ps']
+
+#Composer install (docker exec dentro do container app e depois composer install) 
+- id: "Instando dependências com o composer"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'app', 'composer', 'install']
