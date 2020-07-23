@@ -4,6 +4,11 @@
 /storage/*.key
 /vendor
 .docker/dbdata
+.docker/dbdata/*
+.docker/dbdata/ib_buffer_pool
+.docker/dbdata/ib_logfile0
+.docker/dbdata/ibdata1
+.docker/dbdata/ibtmp1
 .env
 .env.backup
 .phpunit.result.cache
