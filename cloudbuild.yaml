@@ -28,7 +28,7 @@ steps:
 #Executando as migrações de banco de dados 
 - id: "Rodando as migrações de banco de dados"
   name: 'gcr.io/cloud-builders/docker'
-  args: ['exec', '-t', 'app', 'php', '/var/www/artisan', 'migrate']
+  args: ['exec','-t','app','php','/var/www/artisan','migrate']  
 
 #Rodando testes (PHPUnit)
 - id: "Rodando phpunit"
